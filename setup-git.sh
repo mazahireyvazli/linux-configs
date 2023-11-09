@@ -12,4 +12,4 @@ fi
 
 git config --global user.email $git_user_email
 git config --global user.name $git_user_name
-git config --global init.defaultbranc $git_init_default_branch
+git config --global init.defaultbranch $git_init_default_branch
