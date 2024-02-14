@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+  name = mazahireyvazli
+  email = mazahir.eyvazli@gmail.com
+  signingkey = ${GH_SIGNING_KEY}
+
+[url "https://mazahireyvazli:${ghp}@github.com"]
+    insteadOf = https://github.com
+
+[commit]
+    gpgsign = true
+
+[tags]
+    gpgsign = true

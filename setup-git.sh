@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## load configmap
 . ./configmap.sh
 
@@ -10,6 +12,20 @@ else
     echo "skipping git installation"
 fi
 
-git config --global user.email $git_user_email
-git config --global user.name $git_user_name
-git config --global init.defaultbranch $git_init_default_branch
+cp -r ./gitconfig/. ${HOME}
+
+### WSL specific GPG configs
+cat <<EOT >> ~/.gnupg/gpg.conf
+use-agent 
+pinentry-mode loopback
+EOT
+
+cat <<EOT >> ~/.gnupg/gpg-agent.conf
+use-standard-socket
+allow-loopback-pinentry
+EOT
+
+[ -f ~/.zshrc ] && echo -e '\nexport GPG_TTY=$(tty)' >> ~/.zshrc  
+[ -f ~/.bashrc ] && echo -e '\nexport GPG_TTY=$(tty)' >> ~/.bashrc
+
+echo "update access tokens and signing keys in git configurations"
