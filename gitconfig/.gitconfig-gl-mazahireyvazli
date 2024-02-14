@@ -2,6 +2,13 @@
 [user]
   name = mazahir.eyvazli
   email = mazahir.eyvazli@gmail.com
+  signingkey = ${G_SIGNING_KEY}
 
 [url "https://mazahir.eyvazli:${glpat}@gitlab.com"]
     insteadOf = https://gitlab.com
+
+[commit]
+    gpgsign = true
+
+[tags]
+    gpgsign = true
