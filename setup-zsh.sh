@@ -24,11 +24,11 @@ else
 fi
 
 
-cat <<EOT > ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/user-zsh-conf.zsh
+cat <<EOT >> ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/user-zsh-conf.zsh
 unsetopt share_history
 EOT
 
-cat <<EOT > ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/user-zsh-env.zsh
+cat <<EOT >> ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/user-zsh-env.zsh
 ZSH_THEME="jonathan"
 EOT
 
