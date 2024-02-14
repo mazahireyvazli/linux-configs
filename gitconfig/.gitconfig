@@ -1,11 +1,14 @@
-[includeIf "gitdir:~/github.com/"]
-  path = ~/.gitconfig-gh-mazahireyvazli
-
-[includeIf "gitdir:~/gitlab.com/"]
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/ndream/**"]
   path = ~/.gitconfig-gl-mazahireyvazli
+
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/mazahir.eyvazli/**"]
+  path = ~/.gitconfig-gl-mazahireyvazli
+
+[includeIf "hasconfig:remote.*.url:https://github.com/mazahireyvazli/**"]
+  path = ~/.gitconfig-gh-mazahireyvazli
 
 [push]
   autoSetupRemote = true
 
 [init]
-    defaultbranch = main
+  defaultbranch = main
