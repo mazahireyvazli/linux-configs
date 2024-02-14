@@ -12,20 +12,9 @@ else
     echo "skipping git installation"
 fi
 
-cp -r ./gitconfig/. ${HOME}
-
-### WSL specific GPG configs
-cat <<EOT >> ~/.gnupg/gpg.conf
-use-agent 
-pinentry-mode loopback
-EOT
-
-cat <<EOT >> ~/.gnupg/gpg-agent.conf
-use-standard-socket
-allow-loopback-pinentry
-EOT
+cp -r ./gitconfig/.gitconfig ${HOME}
 
 [ -f ~/.zshrc ] && echo -e '\nexport GPG_TTY=$(tty)' >> ~/.zshrc  
 [ -f ~/.bashrc ] && echo -e '\nexport GPG_TTY=$(tty)' >> ~/.bashrc
 
-echo "update access tokens and signing keys in git configurations"
+echo "copy git configs per user manually and update access tokens and signing keys"
