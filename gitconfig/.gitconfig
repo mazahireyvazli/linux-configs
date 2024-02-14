@@ -1,33 +1,8 @@
-[includeIf "gitdir:~/github.com/mazahireyvazli/"]
+[includeIf "gitdir:~/github.com/"]
   path = ~/.gitconfig-gh-mazahireyvazli
 
-[includeIf "gitdir:~/gitlab.com/mazahireyvazli/"]
+[includeIf "gitdir:~/gitlab.com/"]
   path = ~/.gitconfig-gl-mazahireyvazli
-
-[merge]
-  tool=nvimdiff
-
-[pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
-
-[delta]
-    plus-style = "syntax #012800"
-    minus-style = "syntax #340001"
-    syntax-theme = Monokai Extended
-    navigate = true
-    line-numbers = true
-    side-by-side = true
-    line-numbers-left-format = ""
-    line-numbers-right-format = "│ "
-
-[interactive]
-    diffFilter = delta --color-only
-
-[core]
-  autocrlf = input
 
 [push]
   autoSetupRemote = true
