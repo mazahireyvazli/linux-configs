@@ -18,3 +18,6 @@ gpg-export:
 
 gpg-backup:
 	gpg --output ./certs.local/GH_SIGNING_KEY_BACKUP.pgp --armor --export-secret-keys --export-options export-backup mazahir.eyvazli@gmail.com
+
+gpg-import:
+	gpg --import ./certs.local/GH_SIGNING_KEY_BACKUP.pgp
