@@ -17,5 +17,6 @@ fi
 
 cp -r ./gitconfig/. ${HOME}
 
-[ -f ~/.zshrc ] && echo -e '\nexport GPG_TTY=$(tty)' >> ~/.zshrc  
-[ -f ~/.bashrc ] && echo -e '\nexport GPG_TTY=$(tty)' >> ~/.bashrc
+cat <<EOT >> ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/user-git.zsh
+export GPG_TTY=\$(tty)
+EOT

@@ -3,9 +3,15 @@ git:
 zsh:
 	./setup-zsh.sh
 
+zellij-setup:
+	${MAKE} -C ./zellij zellij-scripts
+
+nvim-setup:
+	${MAKE} -C ./nvim nvim-scripts
+
 chmodx:
-	chmod +x setup-*
-	git update-index --chmod=+x --add setup-*
+	find . -name "*.sh" -exec chmod +x {} \;
+	git update-index --chmod=+x --add *.sh
 
 gpg-gen:
 	gpg --full-generate-key
